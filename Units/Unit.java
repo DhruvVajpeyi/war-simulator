@@ -1,22 +1,24 @@
 /**
  * Created by Dhruv on 5/17/2016.
  */
-public abstract class BaseUnit {
+public abstract class Unit {
     private float totalHealth;
     private float currentHealth;
-    private float damage;
+    private float minDamage;
+    private float maxDamage;
     private int speed;
     private int range;
 
-    public BaseUnit(float health, float damage, int speed, int range){
+    public Unit(float health, float minDamage, float maxDamage, int speed, int range){
         this.totalHealth = health;
         this.currentHealth = health;
-        this.damage = damage;
+        this.minDamage = minDamage;
+        this.maxDamage = maxDamage;
         this.speed = speed;
         this.range = range;
     }
 
-    public abstract void attack(BaseUnit target);
+    public abstract void attack(Unit target);
 
     public abstract void move();
 
