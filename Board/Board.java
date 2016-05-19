@@ -1,5 +1,7 @@
 import javafx.util.Pair;
 
+import java.util.Random;
+
 /**
  * Created by Dhruv on 5/17/2016.
  */
@@ -20,8 +22,19 @@ public class Board {
     }
 
     private static void populate(Army army, int size){
+        Random rand = new Random();
+        int x;
+        int y;
         for(int i=0; i<size; i++){
+            Unit newUnit = Unit.getRandomUnit();
+            army.insert(newUnit);
+            do{
+                x = rand.nextInt(grid.length);
+                y = rand.nextInt(grid[0].length);
+            }while(grid[x][y] != null);
 
+            grid[x][y] = newUnit;
+            newUnit.setStartPosition(x, y);
         }
     }
 }

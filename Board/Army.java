@@ -13,4 +13,8 @@ public class Army {
     public int size(){
         return units.size();
     }
+
+    public void insert(Unit newUnit){
+        units.add(newUnit);
+    }
 }
